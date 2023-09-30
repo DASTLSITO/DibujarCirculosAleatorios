@@ -5,6 +5,7 @@ namespace P222310540TM
 {
     public partial class Form1 : Form
     {
+        //Comentario para pull request
         int centroX = 0;
         int centroY = 0;
         Graphics g;
