@@ -37,8 +37,12 @@
             button2 = new Button();
             button3 = new Button();
             button4 = new Button();
+            trackBar1 = new TrackBar();
+            label3 = new Label();
+            label4 = new Label();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)trackBar1).BeginInit();
             SuspendLayout();
             // 
             // button1
@@ -47,7 +51,7 @@
             button1.FlatStyle = FlatStyle.Popup;
             button1.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             button1.ForeColor = Color.FromArgb(181, 203, 153);
-            button1.Location = new Point(12, 316);
+            button1.Location = new Point(12, 363);
             button1.Name = "button1";
             button1.Size = new Size(112, 68);
             button1.TabIndex = 0;
@@ -113,7 +117,7 @@
             button2.FlatStyle = FlatStyle.Popup;
             button2.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             button2.ForeColor = Color.FromArgb(181, 203, 153);
-            button2.Location = new Point(12, 390);
+            button2.Location = new Point(12, 437);
             button2.Name = "button2";
             button2.Size = new Size(112, 68);
             button2.TabIndex = 6;
@@ -127,7 +131,7 @@
             button3.FlatStyle = FlatStyle.Popup;
             button3.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             button3.ForeColor = Color.FromArgb(181, 203, 153);
-            button3.Location = new Point(12, 464);
+            button3.Location = new Point(12, 511);
             button3.Name = "button3";
             button3.Size = new Size(112, 45);
             button3.TabIndex = 7;
@@ -149,12 +153,46 @@
             button4.UseVisualStyleBackColor = false;
             button4.Click += button4_Click;
             // 
+            // trackBar1
+            // 
+            trackBar1.Location = new Point(253, 518);
+            trackBar1.Maximum = 160;
+            trackBar1.Minimum = 16;
+            trackBar1.Name = "trackBar1";
+            trackBar1.Size = new Size(177, 45);
+            trackBar1.TabIndex = 9;
+            trackBar1.Value = 160;
+            trackBar1.Scroll += trackBar1_Scroll;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Location = new Point(130, 518);
+            label3.Name = "label3";
+            label3.Size = new Size(117, 32);
+            label3.TabIndex = 10;
+            label3.Text = "Velocidad";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.Location = new Point(436, 515);
+            label4.Name = "label4";
+            label4.Size = new Size(0, 32);
+            label4.TabIndex = 11;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(181, 203, 153);
-            ClientSize = new Size(641, 521);
+            ClientSize = new Size(641, 576);
+            Controls.Add(label4);
+            Controls.Add(label3);
+            Controls.Add(button1);
+            Controls.Add(trackBar1);
             Controls.Add(button4);
             Controls.Add(button3);
             Controls.Add(button2);
@@ -163,7 +201,6 @@
             Controls.Add(label1);
             Controls.Add(numericUpDown1);
             Controls.Add(panel1);
-            Controls.Add(button1);
             FormBorderStyle = FormBorderStyle.Fixed3D;
             MaximizeBox = false;
             MinimizeBox = false;
@@ -171,6 +208,7 @@
             Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)trackBar1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -186,5 +224,8 @@
         private Button button2;
         private Button button3;
         private Button button4;
+        private TrackBar trackBar1;
+        private Label label3;
+        private Label label4;
     }
 }

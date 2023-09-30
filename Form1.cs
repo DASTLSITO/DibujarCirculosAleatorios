@@ -6,18 +6,20 @@ namespace P222310540TM
 {
     public partial class Form1 : Form
     {
-        int centroX = 0;
-        int centroY = 0;
-        bool cancelar = false;
-        int radioGrande = 240;
         Graphics g;
         Pen color;
 
-        byte circulos = 0;
-
-        double angulo = 0;
+        bool cancelar = false;
 
         int vecesLlamado = 0;
+        int centroX = 0;
+        int centroY = 0;
+        int radioGrande = 240;
+        int velocidad = 0;
+
+        byte circulos = 0;
+        
+        double angulo = 0;
 
         public Form1()
         {
@@ -26,6 +28,8 @@ namespace P222310540TM
             centroY = panel1.Height / 2;
             color = new Pen(Color.FromArgb(0, 0, 0));
             g = panel1.CreateGraphics();
+            label4.Text = trackBar1.Value.ToString() + "ms";
+            velocidad = trackBar1.Value;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -67,7 +71,7 @@ namespace P222310540TM
                 {
                     puntos[i] = new PointF((float)(centroX + hipotenusa * Math.Cos(Math.PI + angulo * i)), (float)(centroY + hipotenusa * Math.Sin(Math.PI + angulo * i)));
                     g.DrawEllipse(color, puntos[i].X - radioChiquito, puntos[i].Y - radioChiquito, radioChiquito * 2, radioChiquito * 2);
-                    await Task.Delay(16);
+                    await Task.Delay(velocidad);
                     await PintarCirculosHijos(radioChiquito, puntos[i].X, puntos[i].Y, nivel - 1);
                 }
             }
@@ -96,6 +100,12 @@ namespace P222310540TM
             {
                 color.Color = colorDialog.Color;
             }
+        }
+
+        private void trackBar1_Scroll(object sender, EventArgs e)
+        {
+            velocidad = trackBar1.Value;
+            label4.Text = trackBar1.Value.ToString() + "ms";
         }
     }
 }
