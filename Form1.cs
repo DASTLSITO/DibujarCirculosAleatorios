@@ -31,8 +31,13 @@ namespace P222310540TM
 
         protected void PintarCirculoPadre()
         {
+            g.Clear(Color.FromArgb(252, 224, 155));
+
             int radioGrande = 240;
             g.DrawEllipse(Pens.Black, centroX - radioGrande, centroY - radioGrande, radioGrande * 2, radioGrande * 2);
+
+            circulos = Convert.ToByte(numericUpDown1.Value);
+            vecesLlamado = Convert.ToInt32(numericUpDown2.Value);
 
             angulo = Math.PI * 2 / circulos;
             PintarCirculosHijosMasChingona(radioGrande, centroX, centroY, vecesLlamado);
